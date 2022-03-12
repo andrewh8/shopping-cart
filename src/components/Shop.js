@@ -1,13 +1,22 @@
 import React from 'react';
+import Item from './Item';
 
-function Shop(props) {
+function Shop() {
 
-  // const test = props.test;
-  return (
-    <div className="Shop">
-      This is Shop
-    </div>
-  );
+    const shopItems = [
+      {name: 'Soccer Ball', id: 1},
+      {name: 'Football', id: 2},
+      {name: 'Tennis Ball', id: 3}
+    ];
+
+    return (
+      <div className="Shop">
+        Shop
+        {shopItems.map((item) => {
+          return <Item key={item.id} item={item} />
+        })}
+      </div>
+    );
 }
 
 export default Shop;

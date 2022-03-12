@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { cartItemsContext } from './Context';
 
-function Item(props) {
+function ShopItem(props) {
 
     const {cartItems, setCartItems} = useContext(cartItemsContext);
 
@@ -17,11 +17,11 @@ function Item(props) {
 
     return (
         <div className="Item">
-            {props.item.name}: {props.item.quantity}
+            {props.item.name}
             <input className={`itemID${props.item.id}Quantity`} type='number'></input>
             <button onClick={addToCart}>Add to Cart</button>
         </div>
     );
 }
 
-export default Item;
+export default ShopItem;
