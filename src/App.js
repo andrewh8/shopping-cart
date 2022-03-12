@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from './components/Nav';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
-import Item from './components/Item';
+import ShopItem from './components/ShopItem';
+import CartItem from './components/CartItem';
 import Home from './components/Home';
 import { cartItemsContext } from './components/Context';
 import './styles/App.css';
@@ -21,7 +22,8 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path="/Shop" element={<Shop />} />
               <Route path="/Cart" element={<Cart />} />
-              <Route path="/Item" element={<Item />} />
+              <Route path="/ShopItem" element={<ShopItem />} />
+              <Route path="/CartItem" element={<CartItem />} />
           </Routes>
         </div>
       </BrowserRouter>

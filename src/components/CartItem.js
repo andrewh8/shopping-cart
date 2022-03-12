@@ -6,7 +6,7 @@ function CartItem(props) {
     const {cartItems, setCartItems} = useContext(cartItemsContext);
 
     const updateQuantity = () => {
-        const newCartItems = cartItems;
+        const newCartItems = cartItems.slice();
         const quantity = document.querySelector(`.itemID${props.item.id}Quantity`).value;
         for (let i = 0; i < newCartItems.length; i++) {
             if (newCartItems[i].id === props.item.id) {
@@ -17,7 +17,7 @@ function CartItem(props) {
     }
 
     const removeItem = () => {
-        const newCartItems = cartItems;
+        const newCartItems = cartItems.slice();
         for (let i = 0; i < newCartItems.length; i++) {
             if (newCartItems[i].id === props.item.id) {
                 newCartItems.splice(i, 1);
@@ -28,8 +28,8 @@ function CartItem(props) {
 
     return (
         <div className="Item">
-            {props.item.name}
-            Quantity: <input value={props.item.quantity} className={`itemID${props.item.id}Quantity`} type='number'></input>
+            {props.item.name} - 
+            Quantity: <input defaultValue={props.item.quantity} className={`itemID${props.item.id}Quantity`} type='number'></input>
             <button onClick={updateQuantity}>Update Quantity</button>
             <button onClick={removeItem}>Remove</button>
         </div>
